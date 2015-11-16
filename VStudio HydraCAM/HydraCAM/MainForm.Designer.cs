@@ -41,14 +41,17 @@
             this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
             this.toolTab = new System.Windows.Forms.RibbonTab();
+            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
+            this.spindlePanel1 = new HydraCAM.SpindlePanel();
+            this.bedViewer1 = new HydraCAM.BedViewer();
             this.gCodeStatus1 = new HydraCAM.GCodeStatus();
             this.motionPanel1 = new HydraCAM.MotionPanel();
             this.statusPanel1 = new HydraCAM.StatusPanel();
-            this.bedViewer1 = new HydraCAM.BedViewer();
             this.SuspendLayout();
             // 
             // mainRibbon
             // 
+            this.mainRibbon.CaptionBarVisible = false;
             this.mainRibbon.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mainRibbon.Location = new System.Drawing.Point(0, 0);
             this.mainRibbon.Minimized = false;
@@ -65,11 +68,12 @@
             this.mainRibbon.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013;
             this.mainRibbon.OrbText = "FILE";
             this.mainRibbon.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.mainRibbon.Size = new System.Drawing.Size(1007, 150);
+            this.mainRibbon.Size = new System.Drawing.Size(1007, 106);
             this.mainRibbon.TabIndex = 0;
             this.mainRibbon.Tabs.Add(this.controlTab);
             this.mainRibbon.Tabs.Add(this.toolTab);
-            this.mainRibbon.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
+            this.mainRibbon.Tabs.Add(this.ribbonTab1);
+            this.mainRibbon.TabsMargin = new System.Windows.Forms.Padding(12, 2, 20, 0);
             this.mainRibbon.Text = "File";
             this.mainRibbon.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
             // 
@@ -136,44 +140,62 @@
             // 
             this.toolTab.Text = "Tools";
             // 
+            // ribbonTab1
+            // 
+            this.ribbonTab1.Text = "ribbonTab1";
+            // 
+            // spindlePanel1
+            // 
+            this.spindlePanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.spindlePanel1.Location = new System.Drawing.Point(2, 462);
+            this.spindlePanel1.Name = "spindlePanel1";
+            this.spindlePanel1.Size = new System.Drawing.Size(540, 106);
+            this.spindlePanel1.TabIndex = 5;
+            // 
+            // bedViewer1
+            // 
+            this.bedViewer1.Location = new System.Drawing.Point(631, 293);
+            this.bedViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bedViewer1.Name = "bedViewer1";
+            this.bedViewer1.Size = new System.Drawing.Size(577, 363);
+            this.bedViewer1.TabIndex = 4;
+            // 
             // gCodeStatus1
             // 
-            this.gCodeStatus1.Location = new System.Drawing.Point(249, 595);
+            this.gCodeStatus1.Location = new System.Drawing.Point(0, 600);
+            this.gCodeStatus1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gCodeStatus1.Name = "gCodeStatus1";
-            this.gCodeStatus1.Size = new System.Drawing.Size(681, 133);
+            this.gCodeStatus1.Size = new System.Drawing.Size(1007, 133);
             this.gCodeStatus1.TabIndex = 3;
             // 
             // motionPanel1
             // 
-            this.motionPanel1.Location = new System.Drawing.Point(12, 234);
+            this.motionPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.motionPanel1.Location = new System.Drawing.Point(2, 159);
             this.motionPanel1.Name = "motionPanel1";
-            this.motionPanel1.Size = new System.Drawing.Size(538, 715);
+            this.motionPanel1.Size = new System.Drawing.Size(540, 301);
             this.motionPanel1.TabIndex = 2;
             // 
             // statusPanel1
             // 
             this.statusPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.statusPanel1.Location = new System.Drawing.Point(12, 156);
+            this.statusPanel1.Location = new System.Drawing.Point(2, 107);
+            this.statusPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.statusPanel1.Name = "statusPanel1";
-            this.statusPanel1.Size = new System.Drawing.Size(526, 63);
+            this.statusPanel1.Size = new System.Drawing.Size(540, 50);
             this.statusPanel1.TabIndex = 1;
-            // 
-            // bedViewer1
-            // 
-            this.bedViewer1.Location = new System.Drawing.Point(205, 376);
-            this.bedViewer1.Name = "bedViewer1";
-            this.bedViewer1.Size = new System.Drawing.Size(577, 363);
-            this.bedViewer1.TabIndex = 4;
             // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(1007, 751);
+            this.ClientSize = new System.Drawing.Size(1007, 733);
+            this.Controls.Add(this.spindlePanel1);
             this.Controls.Add(this.bedViewer1);
             this.Controls.Add(this.gCodeStatus1);
             this.Controls.Add(this.motionPanel1);
             this.Controls.Add(this.statusPanel1);
             this.Controls.Add(this.mainRibbon);
             this.Name = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }
@@ -196,6 +218,8 @@
         private MotionPanel motionPanel1;
         private GCodeStatus gCodeStatus1;
         private BedViewer bedViewer1;
+        private System.Windows.Forms.RibbonTab ribbonTab1;
+        private SpindlePanel spindlePanel1;
 
     }
 }

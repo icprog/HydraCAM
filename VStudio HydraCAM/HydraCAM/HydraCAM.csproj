@@ -89,6 +89,12 @@
     <Compile Include="GCodeStatus.Designer.cs">
       <DependentUpon>GCodeStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpindlePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SpindlePanel.Designer.cs">
+      <DependentUpon>SpindlePanel.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BedViewer.resx">
       <DependentUpon>BedViewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GCodeStatus.resx">
       <DependentUpon>GCodeStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpindlePanel.resx">
+      <DependentUpon>SpindlePanel.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
